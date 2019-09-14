@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{%  block content %}
+
+<!--<section>
+                            <h2>Get in touch</h2>
+                            <form method="post" action="#">
+                                <div class="fields">
+                                    <div class="field half">
+                                        <input type="text" name="name" id="name" placeholder="Name">
+                                    </div>
+                                    <div class="field half">
+                                        <input type="email" name="email" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="field">
+                                        <div class="textarea-wrapper"><textarea name="message" id="message" placeholder="Message" rows="1" style="overflow: hidden; resize: none; height: 69px;"></textarea></div>
+                                    </div>
+                                </div>
+                                <ul class="actions">
+                                    <li><input type="submit" value="Send" class="primary"></li>
+                                </ul>
+                            </form>
+                        </section>
+
+{% endblock %}
+
+<form action="{% url 'add_student' %}" method="post">
+        {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="dodaj">
+        </form>
+-->
+
+<section>
+                            <h2>Get in touch</h2>
+                            <form method="post" action="{% url 'base.html' %}">
+                                {% csrf_token %}
+                                {{ form }}
+                                <div class="fields">
+                                    <div class="field half">
+                                        <input type="text" name="name" id="name" placeholder="Name">
+                                    </div>
+                                    <div class="field half">
+                                        <input type="email" name="email" id="email" placeholder="Email">
+                                    </div>
+                                    <div class="field">
+                                        <div class="textarea-wrapper"><textarea name="message" id="message" placeholder="Message" rows="1" style="overflow: hidden; resize: none; height: 69px;"></textarea></div>
+                                    </div>
+                                </div>
+                                <ul class="actions">
+                                    <li><input type="submit" value="Send" class="primary"></li>
+                                </ul>
+                            </form>
+                        </section>
+
+{% endblock %}
